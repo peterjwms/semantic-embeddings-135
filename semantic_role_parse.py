@@ -1,3 +1,4 @@
+from pathlib import Path
 import requests
 import spacy
 import ast
@@ -10,7 +11,7 @@ orig_stdout = sys.stdout
 
 
 
-def parse_sentence(sentence, nlp,semantic=True,syntax=True,lemmatize=False):
+def parse_sentence(sentence, nlp,semantic=False,syntax=True,lemmatize=False):
     #print('making nlp')
     #print(sentence)
     try:
@@ -29,7 +30,7 @@ def parse_sentence(sentence, nlp,semantic=True,syntax=True,lemmatize=False):
     if semantic:
         semantic_roles = getSemTags(sentence)
         processed_tokens = [lemma + role for lemma, role in zip(processed_tokens,semantic_roles)]
-    return processed_tokens
+    return " ".join(processed_tokens)
 
 def getSemTags(sentence):
     num_tokens = len(sentence.split(" "))
@@ -73,16 +74,18 @@ nlp.tokenizer.rules = {key: value for key, value in nlp.tokenizer.rules.items() 
 #         processed_data.append([processed_question,{'choices':answers,'labels':cleaned_dict["labels"]}])
 
 
+pandas_test = []
 
 processed_data = []
-with open('datasets/truthfulqa_generation.csv', 'r') as file:
+with open(Path('semantic-embeddings-135/datasets/truthfulqa_generation.csv'), 'r') as file:
     print('opened file')
-    csv_reader = csv.reader(file)
-    next(csv_reader, None) 
-    file_data = [row for row in csv_reader]
+    # csv_reader = csv.reader(file)
+    # next(csv_reader, None) 
+    # file_data = [row for row in csv_reader]
+    file_data = pd.read_csv(file)
 
 
-for row in file_data:
+for i, row in file_data.iterrows():
         output = {}
         output["adversarial"] = row[0]
         output["category"] = row[1]
@@ -91,11 +94,16 @@ for row in file_data:
         output["alt_answers"] =  [parse_sentence(alt_answer,nlp) for alt_answer in ast.literal_eval(row[4].replace("\n",","))]
         output["wrong_answers"] =  [parse_sentence(wrong_answer,nlp) for wrong_answer in ast.literal_eval(row[5].replace("\n",","))]
         processed_data.append(json.dumps(output))
+        pandas_test.append(output)
+
         # print(json.dumps(output))
 
 
 with open('qa_gen_processed.json', 'w') as file:
     json.dump(processed_data, file, indent=4)
+
+df = pd.DataFrame(pandas_test)
+df.to_csv('qa_syntags_df.csv', index=False)
 
 print("made it to the end")
         
