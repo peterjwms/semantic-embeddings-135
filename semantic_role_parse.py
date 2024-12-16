@@ -11,28 +11,28 @@ orig_stdout = sys.stdout
 
 
 def parse_sentence(sentence, nlp,semantic=True,syntax=True,lemmatize=False):
-    #print('making nlp')
-    #print(sentence)
     try:
         doc = nlp(sentence)
 
     except:
         print("Failed to process ",sentence)
-    #print('made nlp')
+    raw_tokens = [token.text for token in doc if token.pos_ != 'PUNCT']
     if lemmatize:
         processed_tokens = [token.lemma_ for token in doc if token.pos_ != 'PUNCT']
     else:
-        processed_tokens = [token.text for token in doc if token.pos_ != 'PUNCT']
+        processed_tokens = raw_tokens
     if syntax:
         syntax_tags = [token.pos_ for token in doc]
         processed_tokens = [lemma + '_' + pos for lemma, pos in zip(processed_tokens,syntax_tags)]
     if semantic:
-        semantic_roles = getSemTags(sentence)
+        semantic_roles = getSemTags(raw_tokens)
         processed_tokens = [lemma + role for lemma, role in zip(processed_tokens,semantic_roles)]
     return processed_tokens
 
 def getSemTags(sentence):
-    num_tokens = len(sentence.split(" "))
+    num_tokens = len(sentence)
+    sentence = '%20'.join(sentence)
+    
     sentence = sentence.replace(' ','%20')
     #print('requests req')
     try:
@@ -53,7 +53,7 @@ def getSemTags(sentence):
 print("start")
 
 nlp = spacy.load("en_core_web_sm")
-nlp.tokenizer.rules = {key: value for key, value in nlp.tokenizer.rules.items() if "'" not in key and "’" not in key and "‘" not in key} #modifies pipeline so it doesn't split on apostrophes
+#nlp.tokenizer.rules = {key: value for key, value in nlp.tokenizer.rules.items() if "'" not in key and "’" not in key and "‘" not in key} #modifies pipeline so it doesn't split on apostrophes
 
 # df = pd.read_csv('datasets/truthfulqa_generation.csv')
 
