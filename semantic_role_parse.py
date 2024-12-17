@@ -11,7 +11,7 @@ orig_stdout = sys.stdout
 
 
 
-def parse_sentence(sentence, nlp,semantic=True,syntax=True,lemmatize=False):
+def parse_sentence(sentence, nlp,semantic=True,syntax=False,lemmatize=False):
     try:
         doc = nlp(sentence)
 
@@ -77,7 +77,7 @@ nlp = spacy.load("en_core_web_sm")
 pandas_test = []
 
 processed_data = []
-with open(Path('semantic-embeddings-135/datasets/truthfulqa_generation.csv'), 'r') as file:
+with open(Path('datasets/truthfulqa_generation.csv'), 'r') as file:
     print('opened file')
     # csv_reader = csv.reader(file)
     # next(csv_reader, None) 
@@ -99,13 +99,11 @@ for i, row in file_data.iterrows():
         # print(json.dumps(output))
 
 
-with open('qa_gen_processed.json', 'w') as file:
+with open('qa_semtags_processed.json', 'w') as file:
     json.dump(processed_data, file, indent=4)
 
 df = pd.DataFrame(pandas_test)
-df.to_csv('qa_syntags_df.csv', index=False)
-
-print("made it to the end")
+df.to_csv('qa_semtags_df.csv', index=False)
         
 
 
