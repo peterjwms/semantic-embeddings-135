@@ -40,7 +40,7 @@ Each file is named according to the tags it has, ending in either `_syntax`, `_s
 
 | Dataset  | Tags | File |
 | --- | --- | --- |
-| MNLI Matched Test  | None  | (/datasets/raw/mnli_test_matched.csv) |
+| MNLI Matched Test  | None  | [](/datasets/raw/mnli_test_matched.csv) |
 | MNLI Matched Test  | Semantic  | (/datasets/processed/mnli_test_matched_semantic.csv) |
 | MNLI Matched Test  | Syntax  | (/datasets/processed/mnli_test_matched_syntax.csv) |
 | MNLI Matched Test  | Syntax, Semantic  |  (/datasets/processed/mnli_test_matched_syntax_semantic.csv) |
