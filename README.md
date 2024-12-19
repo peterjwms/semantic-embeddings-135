@@ -15,7 +15,7 @@ This project examines two different NLP tasks using our proposed feature embeddi
 
  - clone the repo
  - choose which task you want to run, selecting either `train_mnli.py` natural language inference labeling for  or `train_qa.py` for closed-book question answering.
- - within the chosen python file, select the pre-processed data file for the embeddings you want to use
+ - within the chosen python file, select the pre-processed data file for the embeddings you want to use - refer to the table Naming scheme and Organization to select the appropriate dataset for the desired task/feature representation.
  - code should be able to run - a GPU is recommended for the MNLI task
 
 
