@@ -10,7 +10,7 @@ COSI 135b Final Project exploring contextual embeddings with semantic and syntac
 
 [datasets](/datasets) directory
 
-# [See the paper here](Applying Semantic and Syntactic Information to Contextual Embeddings.pdf)
+[link](Applying Semantic and Syntactic Information to Contextual Embeddings.pdf)
 
 ## Run instructions
  -clone the repo
