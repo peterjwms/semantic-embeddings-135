@@ -41,18 +41,18 @@ Each file is named according to the tags it has, ending in either `_syntax`, `_s
 | Dataset  | Tags | File |
 | --- | --- | --- |
 | MNLI Matched Test  | None  | [mnli_test_matched](/datasets/raw/mnli_test_matched.csv) |
-| MNLI Matched Test  | Semantic  | /datasets/processed/mnli_test_matched_semantic.csv |
-| MNLI Matched Test  | Syntax  | [Dataset](/datasets/processed/mnli_test_matched_syntax.csv) |
-| MNLI Matched Test  | Syntax, Semantic  |  [Dataset](/datasets/processed/mnli_test_matched_syntax_semantic.csv) |
-| MNLI Matched Validation  | None  | [Dataset](/datasets/raw/mnli_validation_matched.csv) |
-| MNLI Matched Validation  | Semantic  | [Dataset](/datasets/processed/mnli_validation_matched_semantic.csv) |
-| MNLI Matched Validation  | Syntax  | [Dataset](/datasets/processed/mnli_validation_matched_syntax.csv) |
-| MNLI Matched Validation  | Syntax, Semantic  | [Dataset](/datasets/processed/mnli_validation_matched_syntax_semantic.csv) |
-| TruthfulQA Generation  | None  | [Dataset](/datasets/raw/truthfulqa_generation.csv) |
-| TruthfulQA Generation  | Semantic  | [Dataset](/datasets/processed/truthfulqa_generation_semantic.csv) |
-| TruthfulQA Generation  | Syntax  | [Dataset](/datasets/processed/truthfulqa_generation_syntax.csv) |
-| TruthfulQA Generation  | Syntax, Semantic  | [Dataset](/datasets/processed/truthfulqa_generation_syntax_semantic.csv) |
-| TruthfulQA Multiple Choice  | None  | [Dataset](/datasets/raw/truthfulqa_multiple_choice.csv) |
-| TruthfulQA Multiple Choice  | Semantic  | [Dataset](/datasets/processed/truthfulqa_multiple_choice_semantic.csv) |
-| TruthfulQA Multiple Choice  | Syntax  | [Dataset](/datasets/processed/truthfulqa_multiple_choice_syntax.csv) |
-| TruthfulQA Multiple Choice  | Syntax, Semantic  | [Dataset](/datasets/processed/truthfulqa_multiple_choice_syntax_semantic.csv) |
+| MNLI Matched Test  | Semantic  | [mnli_test_matched_semantic](/datasets/processed/mnli_test_matched_semantic.csv) |
+| MNLI Matched Test  | Syntax  | [mnli_test_matched_syntax](/datasets/processed/mnli_test_matched_syntax.csv) |
+| MNLI Matched Test  | Syntax, Semantic  |  [mnli_test_matched_syntax_semantic](/datasets/processed/mnli_test_matched_syntax_semantic.csv) |
+| MNLI Matched Validation  | None  | [mnli_validation_matched](/datasets/raw/mnli_validation_matched.csv) |
+| MNLI Matched Validation  | Semantic  | [mnli_validation_matched_semantic](/datasets/processed/mnli_validation_matched_semantic.csv) |
+| MNLI Matched Validation  | Syntax  | [mnli_validation_matched_syntax](/datasets/processed/mnli_validation_matched_syntax.csv) |
+| MNLI Matched Validation  | Syntax, Semantic  | [mnli_validation_matched_syntax_semantic](/datasets/processed/mnli_validation_matched_syntax_semantic.csv) |
+| TruthfulQA Generation  | None  | [truthfulqa_generation](/datasets/raw/truthfulqa_generation.csv) |
+| TruthfulQA Generation  | Semantic  | [truthfulqa_generation_semantic](/datasets/processed/truthfulqa_generation_semantic.csv) |
+| TruthfulQA Generation  | Syntax  | [truthfulqa_generation_syntax](/datasets/processed/truthfulqa_generation_syntax.csv) |
+| TruthfulQA Generation  | Syntax, Semantic  | [truthfulqa_generation_syntax_semantic](/datasets/processed/truthfulqa_generation_syntax_semantic.csv) |
+| TruthfulQA Multiple Choice  | None  | [truthfulqa_multiple_choice](/datasets/raw/truthfulqa_multiple_choice.csv) |
+| TruthfulQA Multiple Choice  | Semantic  | [truthfulqa_multiple_choice_semantic](/datasets/processed/truthfulqa_multiple_choice_semantic.csv) |
+| TruthfulQA Multiple Choice  | Syntax  | [truthfulqa_multiple_choice_syntax](/datasets/processed/truthfulqa_multiple_choice_syntax.csv) |
+| TruthfulQA Multiple Choice  | Syntax, Semantic  | [truthfulqa_multiple_choice_syntax_semantic](/datasets/processed/truthfulqa_multiple_choice_syntax_semantic.csv) |
