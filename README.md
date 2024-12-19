@@ -41,7 +41,7 @@ Each file is named according to the tags it has, ending in either `_syntax`, `_s
 | Dataset  | Tags | File |
 | --- | --- | --- |
 | MNLI Matched Test  | None  | [mnli_test_matched](/datasets/raw/mnli_test_matched.csv) |
-| MNLI Matched Test  | Semantic  | [Dataset](/datasets/processed/mnli_test_matched_semantic.csv) |
+| MNLI Matched Test  | Semantic  | /datasets/processed/mnli_test_matched_semantic.csv |
 | MNLI Matched Test  | Syntax  | [Dataset](/datasets/processed/mnli_test_matched_syntax.csv) |
 | MNLI Matched Test  | Syntax, Semantic  |  [Dataset](/datasets/processed/mnli_test_matched_syntax_semantic.csv) |
 | MNLI Matched Validation  | None  | [Dataset](/datasets/raw/mnli_validation_matched.csv) |
